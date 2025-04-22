@@ -1,22 +1,26 @@
 import React from 'react';
-import {Text, StyleSheet, View, Image} from 'react-native';
+import {Text, StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from './Styles';
-import { BatLogo } from '../../components/BatLogo/BatLogo';
-import { BatTextInput } from '../../components/BatTextInput/BatTextInput';
-import { BatBotton } from '../../components/BatBotton/BatButton';
 
-export default function Home() {
+export default function Home({ navigation}: any) {
+
+function navform(){
+  navigation.navigate('form');
+}
+
     return(
         <View style={styles.appContainer}>
 
           <View style={styles.logoContainer}>
-        <BatLogo/>
+          <Image source={require("../../../img/Imagem250.svg")} />
         </View>
 
-        <View style={styles.inputContainer}>
-          <BatBotton/>
-        </View>
+        <TouchableOpacity style={styles.button} onPress={navform}>
+            <Text style={styles.buttonText}>Active Bat Signal</Text>
+          </TouchableOpacity>
+          
+          <StatusBar style="auto" />
         <StatusBar style="light" />
         </View>
     )

@@ -1,3 +1,0 @@
-interface BatTextInputProps{
-    pass:string
-}
